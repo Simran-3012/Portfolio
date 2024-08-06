@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style6.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    
+</head>
+<body>
+    <header class="1-header">
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="#">Portfolio</a></div>
+            <ul class="menu" id="sidemenu">
+                <li><a href="#home" class="nav_link">Home</a></li>
+                <li><a href="#about" class="nav_link">About</a></li>
+                <li><a href="#skill_section" class="nav_link">Skills</a></li>
+                <li><a href="#contact" class="nav_link">Contact</a></li>
+                <i class='bx bx-window-close' onclick="closemenu()"></i>
+            </ul>
+            <i class='bx bx-menu' onclick="openmenu()"></i>
+    </nav>
+</header>
+
+    <!--Home Section-->
+    <main class="1-main">
+    <section class="home" id="home">
+        <div class="max-width">
+            <div class="home-content">
+                <div class="text1">Hello, My Name is</div>
+                <div class="text2">Simran</div>
+                <div class="text3">And I'm a <span class="text">Software Developer </span> </div>
+                <div class="home-sci">
+                    <a href="#"><i class='bx bxl-facebook'></i></box-icon></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></box-icon></a>
+                    <a href="#"><i class='bx bxl-whatsapp'></i></box-icon></a>
+                    <a href="#"><i class='bx bxl-linkedin'></i></box-icon></a>
+                </div>
+                <a href="#" class="btn-box">More About Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!--About-->
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="images/Simran3.jpg">
+        </div>
+        <div class="about-text">
+            <h2>About <span>Me</span></h2>
+            <h4>Frontened Developer</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui veritatis accusantium eum alias explicabo
+                recusandae suscipit delectus, laudantium consectetur quam ullam nulla officia ipsam cum consequatur et
+                libero natus eius. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil molestias dolore modi
+                laudantium, aspernatur laborum minus quia odio sit quos optio tenetur at illo commodi aliquid veritatis,
+                ea dolor deleniti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, dignissimos
+                recusandae quae ratione cupiditate in repellendus commodi minima cumque quibusdam quisquam, explicabo
+                ducimus. Sequi et molestiae nesciunt laudantium repellat fugit!</p>
+            <a href="#" class="btn-box">More About Me</a>
+        </div>
+    </section>
+    
+    <!--Skills-->
+
+    <section class="skill_section" id="skill_section">
+        <div class="skill_container">
+            <h1 class="sub-title">My <span>Skills</span></h1>
+            <li>
+                <h3>HTML</h3>
+                <span class="bar"><span class="html"></span></span>
+            </li>
+            <li>
+                <h3>CSS</h3>
+                <span class="bar"><span class="css"></span></span>
+            </li>
+            <li>
+                <h3>JavaScript</h3>
+                <span class="bar"><span class="javascript"></span></span>
+            </li>
+            <li>
+                <h3>Java</h3>
+                <span class="bar"><span class="java"></span></span>
+            </li>
+        </div>
+    </section>
+
+    <!--Contact-->
+
+    <section class="contact" id="contact">
+        <div class="contact-text">
+            <h1>Contact Me</h1>
+            <p><i class='bx bxl-gmail' ></i> contact@example.com</p>
+                    <p><i class='bx bxs-phone' ></i> 8340469023</p>
+                    <div class="contact-icons">
+                        <a href=""><i class='bx bxl-facebook-circle'></i></a>
+                        <a href=""><i class='bx bxl-instagram'></i></a>
+                        <a href=""><i class='bx bxl-whatsapp'></i></a>
+                        <a href="https://www.linkedin.com/in/simran-0b8537272?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class='bx bxl-linkedin'></i></a>
+                    </div>
+                    <a href="images/Simran's Resume.pdf" download class="btn btn2">Download CV</a>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Enter Your Name" required>
+                <input type="email" name="Email" placeholder="Enter Your Email" required>
+                <textarea name="Message" rows="6" placeholder="Enter Your Message"></textarea>
+                <button type="submit" class="btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+        </div>
+        <div class="copyright">
+            <p>Copyright 0 Simran.Made with<i class='bx bxs-heart' ></i> by easy tutorials</p>
+        </div>
+     </section>
+</main>
+  
+</body>
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right ="0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwW-5ZX7k6E4Ybo7H_d3JY3mRmtU_KmrQxiIjyV8rwRfGb21jxKtw28o7hKFo27pVpf-Q/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            if(response.ok){
+            msg.innerHTML = "Message Sent Successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },3000)
+            form.reset()
+        } else{
+            msg.innerHTML = "Error Sending Message"
+        }
+    })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</html>
