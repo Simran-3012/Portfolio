@@ -12,8 +12,11 @@ body{
     background-color: #000;
     color: #fff;
 }
+.header{
+    z-index: 1000;
+}
 .max-width{
-    max-width: 13000px;
+    max-width: 1300px;
     padding: 0 80px;
     margin: auto;
 }
@@ -26,6 +29,7 @@ body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     transition: all 0.3s ease;
     background: rgb(35, 33, 33);
+    z-index: 1000;
 }
 .navbar .max-width{
     display:flex;
@@ -74,13 +78,13 @@ body{
 .home .max-width{
     margin: auto 0 auto 40px;
 }
-.home .home-content .text1{
+.text1{
     font-size: 27px;
     opacity: 0;
     animation: slideRight 1s ease forwards;
     animation-delay: .7s;
 }
-.home .home-content .text2{
+.text2{
     color: rgb(211, 88, 129);
     font-size: 80px;
     font-weight: 600;
@@ -89,14 +93,14 @@ body{
     animation: slideLeft 1s ease forwards;
     animation-delay: .7s;
 }
-.home .home-content .text3{
+.text3{
     font-size: 40px;
     margin: 5px 0;
     opacity: 0;
     animation: slideBottom 1s ease forwards;
     animation-delay: .7s;
 }
-.home .home-content .text3 span{
+.text3 span{
     color:rgb(211, 88, 129);
 }
 .home-sci a{
@@ -176,7 +180,6 @@ body{
     margin-bottom: 6rem;
 }
 /*Skills*/
-
 h1{
     text-align:center;
     font-size: 60px;
@@ -196,9 +199,8 @@ h3{
     padding: 20px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),0 10px 10px rgba(0, 0, 0, 0.22);
 }
-.skill li{
-    margin: 20px 0;
-    padding: 10px;
+.skill_container li{
+    list-style-type: none;
 }
 .bar{
     background: #353b48;
@@ -266,9 +268,7 @@ h3{
         width: 80%;
     }
 }
-
 /*Contact*/
-
 .contact{
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -329,7 +329,7 @@ h3{
     box-shadow: 0 0 20px #0ef;
 }
 .contact-form form{
-    position: relative;
+    position: sticky;
 }
 .contact-form input,form textarea{
     border: none;
@@ -369,13 +369,14 @@ form .btn2{
     cursor: pointer;
 }
 .copyright{
+    
     outline: none;
     text-align: center;
     padding:10px 0;
     background: #555557;
     font-weight: 300px;
     position: fixed;
-    width: 100%;
+    width: 100vw;
     bottom: 0%;
     overflow: hidden;
     box-sizing: border-box;
@@ -423,32 +424,42 @@ form .btn2{
         opacity: 1;
     }
 }
+nav .fa-regular{
+    display: none;
+}
 nav .bx{
     display: none;
 }
 @media only screen and (max-width:600px){
+    .body{
+        width: 100vw;
+    }
     .home{
         background-image: url(images/Simran4.jpg);
     }
-    .home .home-content .text1{
+    .text1{
         margin-top: 150%;
         font-size: 16px;
     }
-    .home .home-content .text2{
+    .text2{
         font-size: 30px;
     }
-    .home .home-content .text3{
+    .text3{
         font-size: 30px;
     }
-    .home .home-content .home-sci{
+    .home-sci{
         display: inline-flex;
+    }
+    nav .fa-regular{
+        display: block;
+        font-size: 25px;
     }
     nav .bx{
         display: block;
         font-size: 25px;
     }
     nav ul{
-        background: #ff040f;
+        background: #7c6869;
         position: fixed;
         top: 0;
         right: -200px;
@@ -462,27 +473,49 @@ nav .bx{
         display: block;
         margin: 25px;
     }
+    nav ul .fa-regular{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
     nav ul .bx{
         position: absolute;
         top: 25px;
         left: 25px;
         cursor: pointer;
     }
+    .about{
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+    }
     .about-text h2{
+        text-align: center;
+        margin-bottom:20%;
         font-size:40px;
     }
     .about-img{
+        margin-top: 20%;
+        padding-bottom: 0;
+        margin-block-end: auto;
         flex-basis: 100%;
     }
     .about-text h4{
-        margin-top: 20%;
-        font-size: 18px;
+        margin-top: 4%;
+        font-size: 20px;
     }
     .about-text p{
+        
         font-size: 14px;
     }
     .about-text .btn-box{
         margin-bottom: 100%;
+    }
+    .contact{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .contact-text h1{
+        margin-top: 30%;
     }
     .contact-text, .contact-form{
         flex-basis: 100%;
