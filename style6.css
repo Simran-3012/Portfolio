@@ -608,16 +608,7 @@ body{
     pointer-events: none;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .subtitle {
-        font-size: 26px;
-    }
-    
-    .designs-container {
-        grid-template-columns: 1fr;
-    }
-}
+
 /*Contact*/
 .contact {
     display: grid;
@@ -864,11 +855,114 @@ nav .bx{
     display: none;
 }
 @media only screen and (max-width:600px){
+    .home{
+        background-image: url(images/Simran4.jpg);
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        background-attachment: scroll;
+    }
+}
+@media only screen and (max-width:600px){
+    .skill-progress .progress-bar {
+        animation: progressFill 1.5s ease-in-out forwards;
+    }
+    
+    @keyframes progressFill {
+        0% { width: 0; }
+        100% { width: var(--progress-width); }
+    }
+}
+@media only screen and (max-width: 992px) {
+    .about {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .about-img {
+        order: 1;
+        margin: 0 auto;
+        max-width: 450px;
+    }
+    
+    .about-text {
+        order: 2;
+    }
+    
+    .about-text h2 {
+        font-size: 48px;
+    }
+    
+    .about-text h4 {
+        font-size: 26px;
+    }
+    
+    .about-text p {
+        font-size: 18px;
+        margin-bottom: 2rem;
+    }
+    
+    .about-text .btn-box {
+        margin: 0 auto 3rem;
+        display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .about-img img {
+        padding-bottom: 10%;
+    }
+    
+    .about-text h2 {
+        font-size: 40px;
+    }
+    
+    .about-text h4 {
+        font-size: 22px;
+        margin: 10px 0 20px;
+    }
+    
+    .about-text p {
+        font-size: 16px;
+        line-height: 1.4;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .about {
+        margin-top: 40px;
+        gap: 1rem;
+    }
+    
+    .about-img img {
+        padding-bottom: 5%;
+    }
+    
+    .about-text h2 {
+        font-size: 36px;
+    }
+    
+    .about-text h4 {
+        font-size: 20px;
+        line-height: 1.5;
+    }
+    
+    .about-text p {
+        font-size: 15px;
+        margin-bottom: 1rem;
+    }
+}
+
+@media only screen and (max-width:600px){
     .body{
         width: 100vw;
     }
-    .home{
-        background-image: url(images/Simran4.jpg);
+    .btn-box{
+        padding: 10px 22px;
+        font-size: 14px;
+        margin-top: 15px;
     }
     .text1{
         margin-top: 150%;
@@ -917,31 +1011,265 @@ nav .bx{
         top: 25px;
         left: 25px;
         cursor: pointer;
+    }  
+}
+/* Media queries for Experience section */
+@media screen and (max-width: 992px) {
+    .experience .max-width {
+        padding: 0 40px;
     }
-    .about{
-        grid-template-columns: repeat(1, 1fr);
-        width: 100%;
+    
+    .exp-roles {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
-    .about-text h2{
-        text-align: center;
-        margin-bottom:20%;
-        font-size:40px;
+    
+    .exp-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
     }
-    .about-img{
-        margin-top: 20%;
-        padding-bottom: 0;
-        margin-block-end: auto;
-        flex-basis: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .experience .title {
+        font-size: 40px;
+        margin-bottom: 30px;
     }
-    .about-text h4{
-        margin-top: 4%;
+    
+    .exp-card {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .role {
+        padding: 15px;
+    }
+    
+    .role h4 {
+        font-size: 16px;
+    }
+    
+    .role li {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .experience .max-width {
+        padding: 0 20px;
+    }
+    
+    .experience .title {
+        font-size: 32px;
+    }
+    
+    .exp-card {
+        padding: 15px;
+    }
+}
+
+/* Media queries for Projects section */
+@media screen and (max-width: 992px) {
+    .projects .max-width {
+        padding: 0 40px;
+    }
+    
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .projects .title {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+    
+    .projects-container {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+    
+    .project-img {
+        height: 180px;
+    }
+    
+    .project-content h3 {
         font-size: 20px;
     }
-    .about-text p{
-        
+    
+    .project-content p {
         font-size: 14px;
     }
-    .about-text .btn-box{
-        margin-bottom: 100%;
+    
+    .tech-used {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .projects .max-width {
+        padding: 0 20px;
+    }
+    
+    .projects .title {
+        font-size: 32px;
+    }
+    
+    .project-content {
+        padding: 15px;
+    }
+    
+    .project-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .project-links a {
+        width: 100%;
+        justify-content: center;
+    }
+}
+/* Media queries for Education section */
+@media screen and (max-width: 992px) {
+    .education .max-width {
+        padding: 0 40px;
+    }
+    
+    .education .title {
+        font-size: 48px;
+    }
+    
+    .education-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .education .title {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+    
+    .education-container {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .education-card {
+        padding: 25px;
+    }
+    
+    .edu-icon {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+    
+    .edu-content h3 {
+        font-size: 22px;
+    }
+    
+    .edu-content h4 {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .education .max-width {
+        padding: 0 20px;
+    }
+    
+    .education .title {
+        font-size: 32px;
+    }
+    
+    .education-card {
+        padding: 20px;
+    }
+    
+    .edu-content p {
+        font-size: 14px;
+    }
+}
+
+/* Media queries for Skills section */
+@media screen and (max-width: 992px) {
+    .skills .max-width {
+        padding: 0 40px;
+    }
+    
+    .skills .title {
+        font-size: 48px;
+    }
+    
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .skills .title {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+    
+    .skills-container {
+        gap: 20px;
+    }
+    
+    .skill-card {
+        padding: 25px 20px;
+    }
+    
+    .skill-icon {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+    
+    .skill-info h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+    
+    .skill-progress {
+        height: 8px;
+        margin-top: 15px;
+    }
+    
+    .progress-bar::after {
+        height: 16px;
+        width: 16px;
+        top: -4px;
+    }
+    
+    .percentage {
+        top: -22px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .skills .max-width {
+        padding: 0 20px;
+    }
+    
+    .skills .title {
+        font-size: 32px;
+    }
+    
+    .skills-container {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .skill-card {
+        padding: 20px 15px;
     }
 }
