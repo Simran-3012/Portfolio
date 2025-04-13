@@ -30,11 +30,39 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(skillsSection);
     }
 });
-document.addEventListener('DOMContentLoaded', function() {
-    const progressBars = document.querySelectorAll('.skill-progress .progress-bar');
+// Function to check if an element is in viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.bottom >= 0
+    );
+}
+
+// Function to animate progress bars when they come into view
+function animateProgressBars() {
+    const progressBars = document.querySelectorAll('.progress-bar');
     
     progressBars.forEach(bar => {
-        const level = bar.getAttribute('data-level');
-        bar.style.setProperty('--progress-width', level + '%');
+        if (isInViewport(bar) && bar.style.width === '0px' || bar.style.width === '') {
+            const level = bar.getAttribute('data-level');
+            setTimeout(() => {
+                bar.style.width = level + '%';
+            }, 200); // Small delay for better visual effect
+        }
     });
+}
+
+// Initialize progress bars on load
+document.addEventListener('DOMContentLoaded', () => {
+    // Set initial width to 0
+    document.querySelectorAll('.progress-bar').forEach(bar => {
+        bar.style.width = '0';
+    });
+    
+    // Check if skills section is already in viewport on page load
+    setTimeout(animateProgressBars, 500);
 });
+
+// Animate progress bars when scrolling
+window.addEventListener('scroll', animateProgressBars);

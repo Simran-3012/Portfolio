@@ -863,14 +863,23 @@ nav .bx{
         background-attachment: scroll;
     }
 }
-@media only screen and (max-width: 600px) {
-    .skill-progress .progress-bar {
-        animation: progressFill 1.5s ease-in-out forwards;
+@media only screen and (max-width: 768px) {
+    .max-width {
+        padding: 0 50px;
     }
     
-    @keyframes progressFill {
-        0% { width: 0; }
-        100% { width: var(--progress-width); }
+    .skills .title {
+        font-size: 40px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .max-width {
+        padding: 0 30px;
+    }
+    
+    .skills .title {
+        font-size: 36px;
     }
 }
 @media only screen and (max-width: 992px) {
