@@ -30,3 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(skillsSection);
     }
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const progressBars = document.querySelectorAll('.skill-progress .progress-bar');
+    
+    progressBars.forEach(bar => {
+        const level = bar.getAttribute('data-level');
+        bar.style.setProperty('--progress-width', level + '%');
+    });
+});
